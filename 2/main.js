@@ -30,20 +30,29 @@ $(document).ready(function() {
 
 
 // Generare numeri random al posto degli 0 nelle proprietà:
-for (var i = 0; i < squadre.length; i++) {
+for (let i = 0; i < squadre.length; i++) {
   // genero casualmente con una function i punti e i falli
   squadre[i].punti = randomNumber(1,100);
   squadre[i].falli = randomNumber(1,100);
+  // Infine usando la destrutturazione creiamo un nuovo array i cui elementi
+  // contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+  // creo nuova array
+
+  let squadreAggiornate = [];
+  // uso la destrutturazione
+  const {nome, falli} = squadre[i];
+  // pusho gli elementi nell'array
+  squadreAggiornate.push(nome, falli);
+  console.log(squadreAggiornate);
 }
-console.log(squadre);
+
 
 
 
 }); // fine ready
 
-
 //function
-
 function randomNumber(min, max) {
   if (isNaN(min) || isNaN(max)) {
     console.log("Non hai inserito correttamente i dati");
