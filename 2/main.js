@@ -26,18 +26,28 @@ $(document).ready(function() {
      punti: 0,
      falli: 0
    }
- ]
+ ];
 
 
-
-
-
-
-
-
-
-
+// Generare numeri random al posto degli 0 nelle proprietà:
+for (var i = 0; i < squadre.length; i++) {
+  // genero casualmente con una function i punti e i falli
+  squadre[i].punti = randomNumber(1,100);
+  squadre[i].falli = randomNumber(1,100);
+}
+console.log(squadre);
 
 
 
 }); // fine ready
+
+
+//function
+
+function randomNumber(min, max) {
+  if (isNaN(min) || isNaN(max)) {
+    console.log("Non hai inserito correttamente i dati");
+  } else {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+}
