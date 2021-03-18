@@ -28,7 +28,8 @@ $(document).ready(function() {
    }
  ];
 
-
+  // creo nuova array dove pushare gli elementi
+ let squadreAggiornate = [];
 // Generare numeri random al posto degli 0 nelle proprietà:
 for (let i = 0; i < squadre.length; i++) {
   // genero casualmente con una function i punti e i falli
@@ -37,16 +38,13 @@ for (let i = 0; i < squadre.length; i++) {
   // Infine usando la destrutturazione creiamo un nuovo array i cui elementi
   // contengono solo nomi e falli subiti e stampiamo tutto in console.
 
-  // creo nuova array
-
-  let squadreAggiornate = [];
   // uso la destrutturazione
   const {nome, falli} = squadre[i];
   // pusho gli elementi nell'array
   squadreAggiornate.push(nome, falli);
-  console.log(squadreAggiornate);
 }
 
+console.log(squadreAggiornate);
 
 
 
