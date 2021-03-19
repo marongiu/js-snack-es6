@@ -44,8 +44,13 @@ $(document).ready(function() {
 const maschi = gatti.filter((item) => item.sesso == "M");
 const femmine = gatti.filter((item) => item.sesso == "F");
 
-// utilizzando  l'operatore Spread unisco le due array
+// utilizzando  l'operatore Spread unisco le due array inserendo solamente nome e colore e opacità del fiocco per ogni gatto.
 let gattiUniti = [...femmine,...maschi];
-console.log(gattiUniti);
+
+gattiUniti.forEach((item, i) => {
+  console.log(gattiUniti[i].nome, gattiUniti[i].colore);
+});
+
+
 
 }); // fine ready
