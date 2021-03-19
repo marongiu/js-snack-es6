@@ -38,11 +38,11 @@ $(document).ready(function() {
 
   // Ora devo assegnare un fiocco in base al sesso
   maschi.forEach((item) => {
-    $('ul').append(`<li> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso} </li>`)
+    $('ul').append(`<li> <i class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso}  </li>`)
   });
 
   femmine.forEach((item) => {
-    $('ul').append(`<li> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso} </li>`)
+    $('ul').append(`<li> <i class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso}  </li>`)
   });
 
 
