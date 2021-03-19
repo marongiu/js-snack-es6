@@ -1,4 +1,3 @@
-// Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, inserendo solamente nome e colore e opacità del fiocco per ogni gatto.
 $(document).ready(function() {
   // ricopio l'array del precedente esercizio
   const gatti = [
@@ -29,20 +28,32 @@ $(document).ready(function() {
     {
       nome: "Virgo",
       eta: 4,
-      colore: "rosso",
+      colore: "panna",
       sesso: "M",
     },
     {
       nome: "Kikia",
       eta: 14,
-      colore: "giallo",
+      colore: "panna",
       sesso: "F",
     }
   ];
 
-// mi ricopio la divisione di maschi e femmine con il filter
-const maschi = gatti.filter((item) => item.sesso == "M");
-const femmine = gatti.filter((item) => item.sesso == "F");
+  // Dividere i gatti in due contenitori distinti in base al sesso
+    // creo due array M e F utilizzando il filter per il sesso
+  const maschi = gatti.filter((item) => item.sesso == "M");
+  const femmine = gatti.filter((item) => item.sesso == "F");
+
+  // Ora devo assegnare un fiocco in base al sesso
+    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio. divido per 10 per rendere opacity possibile
+  maschi.forEach((item) => {
+    $('ul').append(`<li> <i style="opacity: ${item.eta / 10}" class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso} la sua età è di ${item.eta} anni/o</li>`);
+  });
+  // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio divido per 10 per rendere opacity possibile
+  femmine.forEach((item) => {
+    $('ul').append(`<li> <i  style="opacity: ${item.eta / 10}" class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso} la sua età è di ${item.eta} anni/o </li>`);
+  });
+
 
 // utilizzando  l'operatore Spread unisco le due array inserendo solamente nome e colore e opacità del fiocco per ogni gatto.
 let gattiUniti = [...femmine,...maschi];
