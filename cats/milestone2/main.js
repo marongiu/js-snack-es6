@@ -19,13 +19,25 @@ $(document).ready(function() {
     },
     {
       nome: "Leo",
-      eta: 5,
+      eta: 3,
       colore: "marrone",
       sesso: "M",
     },
     {
       nome: "Briciola",
+      eta: 5,
+      colore: "panna",
+      sesso: "F",
+    },
+    {
+      nome: "Virgo",
       eta: 4,
+      colore: "panna",
+      sesso: "M",
+    },
+    {
+      nome: "Kikia",
+      eta: 14,
       colore: "panna",
       sesso: "F",
     }
@@ -38,12 +50,22 @@ $(document).ready(function() {
 
   // Ora devo assegnare un fiocco in base al sesso
   maschi.forEach((item) => {
-    $('ul').append(`<li> <i class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso}  </li>`)
+    $('ul').append(`<li> <i class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso} la sua età è di ${item.eta} anni/o</li>`);
+    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
+      if (item.eta <= 3)  { // giovani
+        $('ul li i.blue').css('opacity', '0.4');
+      }
   });
 
   femmine.forEach((item) => {
-    $('ul').append(`<li> <i class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso}  </li>`)
+    $('ul').append(`<li> <i class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso} la sua età è di ${item.eta} anni/o </li>`);
+    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
+    if (item.eta <= 3) {
+      $('ul li i.pink').css('opacity', '0.5');
+    }
   });
+
+
 
 
 
