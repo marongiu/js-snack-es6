@@ -59,6 +59,16 @@ $(document).ready(function() {
   });
 
 
+// alernativa opacity
+
+// if (item.eta <= 3) {
+//       $('ul li i.blue').css('opacity', '0.5');
+//     }
+
+// if (item.eta <= 3) {
+//       $('ul li i.pink').css('opacity', '0.5');
+//     }
+
 
 
 
