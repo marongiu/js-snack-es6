@@ -49,21 +49,15 @@ $(document).ready(function() {
   const femmine = gatti.filter((item) => item.sesso == "F");
 
   // Ora devo assegnare un fiocco in base al sesso
+    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio. divido per 10 per rendere opacity possibile
   maschi.forEach((item) => {
-    $('ul').append(`<li> <i class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso} la sua età è di ${item.eta} anni/o</li>`);
-    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
-      if (item.eta <= 3)  { // giovani
-        $('ul li i.blue').css('opacity', '0.4');
-      }
+    $('ul').append(`<li> <i style="opacity: ${item.eta / 10}" class="fas fa-ribbon blue"></i> Il gatto ${item.nome} di colore ${item.colore} è un ${item.sesso} la sua età è di ${item.eta} anni/o</li>`);
+  });
+  // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio divido per 10 per rendere opacity possibile
+  femmine.forEach((item) => {
+    $('ul').append(`<li> <i  style="opacity: ${item.eta / 10}" class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso} la sua età è di ${item.eta} anni/o </li>`);
   });
 
-  femmine.forEach((item) => {
-    $('ul').append(`<li> <i class="fas fa-ribbon pink"></i> La gatta ${item.nome} di colore ${item.colore} è una ${item.sesso} la sua età è di ${item.eta} anni/o </li>`);
-    // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro se il gatto è più vecchio.
-    if (item.eta <= 3) {
-      $('ul li i.pink').css('opacity', '0.5');
-    }
-  });
 
 
 

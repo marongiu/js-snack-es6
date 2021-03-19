@@ -29,13 +29,13 @@ $(document).ready(function() {
     {
       nome: "Virgo",
       eta: 4,
-      colore: "panna",
+      colore: "rosso",
       sesso: "M",
     },
     {
       nome: "Kikia",
       eta: 14,
-      colore: "panna",
+      colore: "giallo",
       sesso: "F",
     }
   ];
