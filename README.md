@@ -1,1 +1,1 @@
-js-snack-es6
+Esercizi JavaScript
