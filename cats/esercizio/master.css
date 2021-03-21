@@ -10,9 +10,24 @@
   padding-right: 5px;
 }
 
+ul {
+  margin: 20px;
+}
+
 ul li {
   display: flex;
   align-items: center;
   list-style: none;
   padding-top: 10px;
+  color: #ffff;
+  font-weight: bold;
+}
+
+ul li i{
+  font-size: 30px;
+  padding: 0  25px;
+}
+
+body {
+  background-color: #40394a;
 }
